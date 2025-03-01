@@ -1,0 +1,108 @@
+// Variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Custom bootstrap and utilities
+@import 'custom-bootstrap';
+@import 'utilities-api.scss';
+
+// MDBootstrap
+@import 'mdb-ui-kit/src/scss/mdb.free.scss';
+
+body {
+    background-color: $primary-light;
+}
+
+// Typography
+.title {
+   @include title;
+}
+.sub-title {
+   @include sub-title;
+}
+.text {
+   @include text;
+}
+
+// Navbar
+.navbar {
+   background-color: $primary-main;
+   padding: 0.5rem 0 0;
+
+   .navbar-toggler {
+      color: $secondary-dark;
+      padding: 1rem;
+   }
+
+   .navbar-brand {
+      padding: 1rem;
+      position: relative;
+   }
+
+   .navbar-title {
+      @include title(1.5rem);
+      color: $secondary-dark;
+   }
+
+   .navbar-nav {
+      padding: 0;
+   }
+
+   .nav-item {
+      padding: 0;
+      margin: 0 3rem 0 0;
+      text-align: center;
+   }
+
+   .nav-link {
+      @include sub-title(1.25rem);
+      padding: 1rem;
+      position: relative;
+   }
+
+   .navbar-brand::after,
+   .nav-link::after {
+      content: '';
+      @include nav-item-border($secondary-dark, 0px, 50%);
+   }
+
+   .navbar-brand:hover::after,
+   .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+   }
+
+   // Mobile devices
+   @include media-breakpoint-down(lg) {
+      .navbar-brand {
+         display: flex;
+         justify-content: center;
+         margin: 0;
+      }
+
+      .nav-item {
+         margin: 0;
+      }
+   }
+}
+
+// Small devices
+@include media-breakpoint-up(sm) {}
+
+// Medium devices
+@include media-breakpoint-up(md) {}
+
+// Large devices
+@include media-breakpoint-up(lg) {}
+
+// X-Large devices
+@include media-breakpoint-up(xl) {}
+
+// XX-Large devices
+@include media-breakpoint-up(xxl) {}
+
+// XXX-Large devices (up 1800px)
+@include media-breakpoint-up(xxxl) {}
+
+// Ultra-Large devices (up 2500px)
+@include media-breakpoint-up(ultra) {}
