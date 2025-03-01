@@ -111,14 +111,34 @@ body {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
+
+   .title-intro {
+      @include custom-text($font-title, 700, 4rem, $secondary-light);
+   }
+
+   .text-intro {
+      @include custom-text($font-text, 500, 2rem, $secondary-light);
+   }
 }
 
 // Style
 .mask-dark {
-   @include mask-dark(0.5)
+   @include mask-dark(0.6)
 }
 .mask-strong-dark {
    @include mask-dark(0.8);
+}
+
+// Components
+.btn.btn-dark.btn-custom {
+   background-color: rgba($color: #ffffff, $alpha: 0.2);
+   color: $secondary-light;
+
+   &:hover,
+   &:active {
+      background-color: rgba($color: #ffffff, $alpha: 0.05);
+      border: 1px solid $secondary-light;
+   }
 }
 
 // Small devices
