@@ -26,7 +26,8 @@ body {
 
 // Navbar
 .navbar {
-   background-color: $primary-main;
+   background-color: transparent;
+   z-index: 2;
    padding: 0.5rem 0 0;
 
    .navbar-toggler {
@@ -41,7 +42,7 @@ body {
 
    .navbar-title {
       @include title(1.5rem);
-      color: $secondary-dark;
+      color: $secondary-light;
    }
 
    .navbar-nav {
@@ -58,12 +59,13 @@ body {
       @include sub-title(1.25rem);
       padding: 1rem;
       position: relative;
+      color: $secondary-light;
    }
 
    .navbar-brand::after,
    .nav-link::after {
       content: '';
-      @include nav-item-border($secondary-dark, 0px, 50%);
+      @include nav-item-border($secondary-light, 0px, 50%);
    }
 
    .navbar-brand:hover::after,
@@ -74,16 +76,49 @@ body {
 
    // Mobile devices
    @include media-breakpoint-down(lg) {
+      background-color: $primary-main;
+
       .navbar-brand {
          display: flex;
          justify-content: center;
          margin: 0;
       }
 
+      .navbar-title {
+         color: $secondary-dark;
+      }
+
+      .nav-link {
+         color: $secondary-main;
+      }
+
       .nav-item {
          margin: 0;
       }
+
+      .navbar-brand::after,
+      .nav-link::after {
+         content: '';
+         @include nav-item-border($secondary-dark, 0px, 50%);
+      }
    }
+}
+
+// Intro section
+.intro {
+   height: 100vh;
+   background-image: url('../assets/img/pexels-pixabay-256381.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+// Style
+.mask-dark {
+   @include mask-dark(0.5)
+}
+.mask-strong-dark {
+   @include mask-dark(0.8);
 }
 
 // Small devices
