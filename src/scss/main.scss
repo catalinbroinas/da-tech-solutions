@@ -86,6 +86,37 @@ body {
    }
 }
 
+// Components
+.card-product {
+   .card-title {
+      @include custom-text($font-title, 700, 1.1rem, $secondary-dark);
+   }
+
+   .card-sub-title {
+      @include custom-text($font-text, 400, 1rem, $secondary-main);
+   }
+
+   .price {
+      @include custom-text($font-title, 600, 1.2rem, $secondary-main);
+   }
+}
+
+.btn.btn-primary.btn-custom {
+   background-color: $primary-dark;
+   color: $secondary-light;
+
+   &:hover,
+   &:active {
+      background-color: $primary-dark;
+      color: $secondary-light;
+   }
+}
+
+// Styles
+.mask-special-cold {
+   background-color: rgba(79, 172, 254, 0.2);
+}
+
 // Small devices
 @include media-breakpoint-up(sm) {}
 
