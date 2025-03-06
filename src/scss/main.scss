@@ -115,6 +115,27 @@ body {
    }
 }
 
+.btn.btn-facebook {
+   @include btn-facebook;
+}
+
+.btn.btn-instagram {
+   @include btn-instagram;
+}
+
+.btn.btn-linkedin {
+   @include btn-linkedin;
+}
+
+// Style
+.icon-primary {
+   color: $secondary-dark;
+}
+
+.font-title {
+   font-family: $font-title;
+}
+
 // Small devices
 @include media-breakpoint-up(sm) {}
 
