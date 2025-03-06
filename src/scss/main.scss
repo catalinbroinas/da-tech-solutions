@@ -121,26 +121,6 @@ body {
    }
 }
 
-// Style
-.mask-dark {
-   @include mask-dark(0.6)
-}
-.mask-strong-dark {
-   @include mask-dark(0.8);
-}
-
-// Components
-.btn.btn-dark.btn-custom {
-   background-color: rgba($color: #ffffff, $alpha: 0.2);
-   color: $secondary-light;
-
-   &:hover,
-   &:active {
-      background-color: rgba($color: #ffffff, $alpha: 0.05);
-      border: 1px solid $secondary-light;
-   }
-}
-
 // Components
 .card-custom {
    .card-title {
@@ -154,6 +134,54 @@ body {
    .card-icon {
       color: $primary-dark;
    }
+}
+
+.card-product {
+   .card-title {
+      @include custom-text($font-title, 700, 1.1rem, $secondary-dark);
+   }
+
+   .card-sub-title {
+      @include custom-text($font-text, 400, 1rem, $secondary-main);
+   }
+
+   .price {
+      @include custom-text($font-title, 600, 1.2rem, $secondary-main);
+   }
+}
+
+.btn.btn-dark.btn-custom {
+   background-color: rgba($color: #ffffff, $alpha: 0.2);
+   color: $secondary-light;
+
+   &:hover,
+   &:active {
+      background-color: rgba($color: #ffffff, $alpha: 0.05);
+      border: 1px solid $secondary-light;
+   }
+}
+
+.btn.btn-primary.btn-custom {
+   background-color: $primary-dark;
+   color: $secondary-light;
+
+   &:hover,
+   &:active {
+      background-color: $primary-dark;
+      color: $secondary-light;
+   }
+}
+
+// Styles
+.mask-dark {
+   @include mask-dark(0.6)
+}
+.mask-strong-dark {
+   @include mask-dark(0.8);
+}
+
+.mask-special-cold {
+   background-color: rgba(79, 172, 254, 0.2);
 }
 
 // Small devices
