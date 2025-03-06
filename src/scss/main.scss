@@ -141,6 +141,21 @@ body {
    }
 }
 
+// Components
+.card-custom {
+   .card-title {
+      @include custom-text($font-title, 700, 1.25rem, $secondary-main);
+   }
+
+   .card-text {
+      @include custom-text($font-text, 400, 1rem, $secondary-main);
+   }
+
+   .card-icon {
+      color: $primary-dark;
+   }
+}
+
 // Small devices
 @include media-breakpoint-up(sm) {}
 
