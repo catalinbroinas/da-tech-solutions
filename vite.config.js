@@ -17,13 +17,17 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 assetFileNames: (assetInfo) => {
-                    if (/\.(ico|png|jpe?g|JPG|gif|svg|webp)$/.test(assetInfo.name)) {
-                        return 'assets/img/[name].[ext]';
-                    }
-                    return 'assets/[name].[ext]';
+                    const isImage = /\.(ico|png|jpe?g|gif|svg|webp)$/i.test(
+                        assetInfo.name ?? ''
+                    );
+
+                    return isImage
+                        ? 'assets/img/[name]-[hash][extname]'
+                        : 'assets/[name]-[hash][extname]';
                 },
-                chunkFileNames: 'assets/[name].[ext]',
-                entryFileNames: 'assets/[name].js',
+
+                chunkFileNames: 'assets/[name]-[hash].js',
+                entryFileNames: 'assets/[name]-[hash].js',
             },
         },
     },
