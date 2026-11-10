@@ -2,16 +2,16 @@
   "name": "da-tech-solutions",
   "version": "1.0.0",
   "type": "module",
+  "private": "true",
+  "author": "Catalin Broinas",
+  "license": "MIT",
+  "description": "A responsive website template for a technology services company, designed for a professional online presence.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "sass": "^1.108.1",
     "vite": "^8.3.7",
