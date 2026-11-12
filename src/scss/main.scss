@@ -1,281 +1,282 @@
-// Variables and mixins
 @import 'variables';
 @import 'mixins';
-
-// Custom bootstrap and utilities
 @import 'custom-bootstrap';
 @import 'utilities-api.scss';
-
-// MDBootstrap
 @import 'mdb-ui-kit/src/scss/mdb.free.scss';
 
+// =================================
+//   GLOBAL STYLES
+// =================================
+
 body {
-    background-color: $primary-main;
+  background-color: $primary-main;
 }
 
 // Typography
 .title {
-   @include title;
+  @include title;
 }
 .sub-title {
-   @include sub-title;
+  @include sub-title;
 }
 .text {
-   @include text;
+  @include text;
 }
 
-// Navbar
+// =================================
+//   NAVBAR
+// =================================
+
 .navbar {
-   position: fixed;
-   z-index: 2;
-   background-color: transparent;
-   box-shadow: none;
-   padding: 0.5rem 0 0;
+  position: fixed;
+  z-index: 2;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0.5rem 0 0;
 
-   .navbar-toggler {
+  .navbar-toggler {
+    color: $secondary-dark;
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    padding: 1rem;
+    position: relative;
+  }
+
+  .navbar-title {
+    @include title(1.5rem);
+    color: $secondary-light;
+  }
+
+  .navbar-nav {
+    padding: 0;
+  }
+
+  .nav-item {
+    padding: 0;
+    margin: 0 3rem 0 0;
+    text-align: center;
+  }
+
+  .nav-link {
+    @include sub-title(1.25rem);
+    padding: 1rem;
+    position: relative;
+    color: $secondary-light;
+  }
+
+  .navbar-brand::after,
+  .nav-link::after {
+    content: '';
+    @include nav-item-border($secondary-light, 0px, 50%);
+  }
+
+  .navbar-brand:hover::after,
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  // Mobile devices
+  @include media-breakpoint-down(lg) {
+    background-color: $primary-main;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
+      rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+
+    .navbar-brand {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .navbar-title {
       color: $secondary-dark;
-      padding: 1rem;
-   }
+    }
 
-   .navbar-brand {
-      padding: 1rem;
-      position: relative;
-   }
+    .nav-link {
+      color: $secondary-main;
+    }
 
-   .navbar-title {
-      @include title(1.5rem);
-      color: $secondary-light;
-   }
+    .nav-item {
+      margin: 0;
+    }
 
-   .navbar-nav {
-      padding: 0;
-   }
-
-   .nav-item {
-      padding: 0;
-      margin: 0 3rem 0 0;
-      text-align: center;
-   }
-
-   .nav-link {
-      @include sub-title(1.25rem);
-      padding: 1rem;
-      position: relative;
-      color: $secondary-light;
-   }
-
-   .navbar-brand::after,
-   .nav-link::after {
+    .navbar-brand::after,
+    .nav-link::after {
       content: '';
-      @include nav-item-border($secondary-light, 0px, 50%);
-   }
+      @include nav-item-border($secondary-dark, 0px, 50%);
+    }
+  }
 
-   .navbar-brand:hover::after,
-   .nav-link:hover::after {
-      width: 100%;
-      left: 0;
-   }
-
-   // Mobile devices
-   @include media-breakpoint-down(lg) {
-      background-color: $primary-main;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
-         rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
-
-      .navbar-brand {
-         display: flex;
-         justify-content: center;
-         margin: 0;
-      }
-
-      .navbar-title {
-         color: $secondary-dark;
-      }
-
-      .nav-link {
-         color: $secondary-main;
-      }
-
-      .nav-item {
-         margin: 0;
-      }
-
-      .navbar-brand::after,
-      .nav-link::after {
-         content: '';
-         @include nav-item-border($secondary-dark, 0px, 50%);
-      }
-   }
-
-   transition-property: background-color, color, box-shadow;
-   transition-duration: 0.5s;
-   transition-timing-function: ease-in-out;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
-// Intro section
+// =================================
+//   INTRO
+// =================================
+
 .intro {
-   height: 100vh;
-   background-image: url('../assets/img/pexels-pixabay-256381.jpg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
+  height: 100vh;
+  background-image: url('../assets/img/pexels-pixabay-256381.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-   .title-intro {
-      @include custom-text($font-title, 700, 4rem, $secondary-light);
-   }
+  .title-intro {
+    @include custom-text($font-title, 700, 4rem, $secondary-light);
+  }
 
-   .text-intro {
-      @include custom-text($font-text, 500, 2rem, $secondary-light);
-   }
+  .text-intro {
+    @include custom-text($font-text, 500, 2rem, $secondary-light);
+  }
 }
 
-// Components
+// =================================
+//   CARDS
+// =================================
+
 .card-custom {
-   .card-title {
-      @include custom-text($font-title, 700, 1.25rem, $secondary-main);
-   }
+  .card-title {
+    @include custom-text($font-title, 700, 1.25rem, $secondary-main);
+  }
 
-   .card-text {
-      @include custom-text($font-text, 500, 1rem, $secondary-main);
-   }
+  .card-text {
+    @include custom-text($font-text, 500, 1rem, $secondary-main);
+  }
 
-   .card-icon {
-      color: $primary-dark;
-   }
+  .card-icon {
+    color: $primary-dark;
+  }
 }
 
 .card-about {
-   @include card-ice;
-   transform: translateX(10%);
+  @include card-ice;
+  transform: translateX(10%);
 
-   .card-title {
-      @include custom-text($font-title, 700, 1.75rem, $secondary-dark);
-   }
+  .card-title {
+    @include custom-text($font-title, 700, 1.75rem, $secondary-dark);
+  }
 
-   .card-sub-title {
-      @include custom-text($font-text, 600, 1.25rem, $secondary-main);
-   }
+  .card-sub-title {
+    @include custom-text($font-text, 600, 1.25rem, $secondary-main);
+  }
 
-   .card-text {
-      @include custom-text($font-text, 400, 1rem, $secondary-main);
-   }
-   .card-icon {
-      color: $primary-dark;
-   }
+  .card-text {
+    @include custom-text($font-text, 400, 1rem, $secondary-main);
+  }
+  .card-icon {
+    color: $primary-dark;
+  }
 }
 
 .card-product {
-   .card-title {
-      @include custom-text($font-title, 700, 1.1rem, $secondary-dark);
-   }
+  .card-title {
+    @include custom-text($font-title, 700, 1.1rem, $secondary-dark);
+  }
 
-   .card-sub-title {
-      @include custom-text($font-text, 400, 1rem, $secondary-main);
-   }
+  .card-sub-title {
+    @include custom-text($font-text, 400, 1rem, $secondary-main);
+  }
 
-   .price {
-      @include custom-text($font-title, 600, 1.2rem, $secondary-main);
-   }
+  .price {
+    @include custom-text($font-title, 600, 1.2rem, $secondary-main);
+  }
 }
 
-.btn.btn-dark.btn-custom {
-   background-color: rgba($color: #ffffff, $alpha: 0.2);
-   color: $secondary-light;
+// =================================
+//   BUTTONS
+// =================================
 
-   &:hover,
-   &:active {
-      background-color: rgba($color: #ffffff, $alpha: 0.05);
-      border: 1px solid $secondary-light;
-   }
+.btn.btn-dark.btn-custom {
+  background-color: rgba($color: #ffffff, $alpha: 0.2);
+  color: $secondary-light;
+
+  &:hover,
+  &:active {
+    background-color: rgba($color: #ffffff, $alpha: 0.05);
+    border: 1px solid $secondary-light;
+  }
 }
 
 .btn.btn-primary.btn-custom {
-   background-color: $primary-dark;
-   color: $secondary-light;
+  background-color: $primary-dark;
+  color: $secondary-light;
 
-   &:hover,
-   &:active {
-      background-color: $primary-dark;
-      color: $secondary-light;
-   }
+  &:hover,
+  &:active {
+    background-color: $primary-dark;
+    color: $secondary-light;
+  }
 }
 
 .btn.btn-facebook {
-   @include btn-facebook;
+  @include btn-facebook;
 }
 
 .btn.btn-instagram {
-   @include btn-instagram;
+  @include btn-instagram;
 }
 
 .btn.btn-linkedin {
-   @include btn-linkedin;
+  @include btn-linkedin;
 }
 
-// Styles
+// =================================
+//   UTILITIES
+// =================================
+
 .mask-dark {
-   @include mask-dark(0.6)
+  @include mask-dark(0.6)
 }
 .mask-strong-dark {
-   @include mask-dark(0.8);
+  @include mask-dark(0.8);
 }
 
 .mask-special-cold {
-   background-color: rgba(79, 172, 254, 0.2);
+  background-color: rgba(79, 172, 254, 0.2);
 }
 
 .icon-primary {
-   color: $secondary-dark;
+  color: $secondary-dark;
 }
 
 .font-title {
-   font-family: $font-title;
+  font-family: $font-title;
 }
 
-// Small devices
-@include media-breakpoint-up(sm) {}
-
-// Medium devices
-@include media-breakpoint-up(md) {}
+// =================================
+//   BREAKPOINTS
+// =================================
 
 // Large devices
 @include media-breakpoint-up(lg) {
-   // Navbar
-   .navbar.navbar-scroll {
-      background-color: $primary-main;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
-         rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+  // Navbar
+  .navbar.navbar-scroll {
+    background-color: $primary-main;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
+      rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
 
-      .navbar-title {
-         color: $secondary-dark;
-      }
-      
-      .nav-link {
-         color: $secondary-main;
-      }
+    .navbar-title {
+      color: $secondary-dark;
+    }
+    
+    .nav-link {
+      color: $secondary-main;
+    }
 
-      .navbar-brand::after,
-      .nav-link::after {
-         content: '';
-         @include nav-item-border($secondary-dark, 0px, 50%);
-      }
+    .navbar-brand::after,
+    .nav-link::after {
+      content: '';
+      @include nav-item-border($secondary-dark, 0px, 50%);
+    }
 
-      .navbar-brand:hover::after,
-      .nav-link:hover::after {
-         width: 100%;
-         left: 0;
-      }
-   }
+    .navbar-brand:hover::after,
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  }
 }
-
-// X-Large devices
-@include media-breakpoint-up(xl) {}
-
-// XX-Large devices
-@include media-breakpoint-up(xxl) {}
-
-// XXX-Large devices (up 1800px)
-@include media-breakpoint-up(xxxl) {}
-
-// Ultra-Large devices (up 2500px)
-@include media-breakpoint-up(ultra) {}
