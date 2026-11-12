@@ -168,6 +168,10 @@ body {
   .card-icon {
     color: $background-brand;
   }
+
+  @include media-breakpoint-down(lg) {
+    transform: translate(0, 10%);
+  }
 }
 
 .card-product {
