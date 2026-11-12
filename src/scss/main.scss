@@ -250,6 +250,28 @@ body {
 }
 
 // =================================
+//   FOOTER
+// =================================
+
+.footer {
+  background-color: $background-footer;
+
+  &__copyright {
+    padding: 1rem;
+    text-align: center;
+
+    @include custom-text(
+      $font-text,
+      400,
+      1rem,
+      $text-primary
+    );
+
+    margin: 0;
+  }
+}
+
+// =================================
 //   BREAKPOINTS
 // =================================
 
