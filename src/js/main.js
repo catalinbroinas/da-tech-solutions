@@ -5,20 +5,20 @@ import '../scss/main.scss';
 import { DomUtilityManager } from './modules/utility';
 
 // MDBootstrap 5
-import { Ripple, Dropdown, Collapse, initMDB } from 'mdb-ui-kit/js/mdb.es.min.js';
+import { Ripple, Dropdown, Collapse, initMDB } from 'mdb-ui-kit';
 
 function MainDomManager() {
-    const utilityDomManager = DomUtilityManager();
+  const utilityDomManager = DomUtilityManager();
 
-    const initApp = () => {
-        initMDB({ Ripple, Dropdown, Collapse });
-        utilityDomManager.navbarScroll();
-    };
+  const initApp = () => {
+    initMDB({ Ripple, Dropdown, Collapse });
+    utilityDomManager.navbarScroll();
+  };
 
-    return { initApp };
+  return { initApp };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const domManager = MainDomManager();
-    domManager.initApp();
+  const domManager = MainDomManager();
+  domManager.initApp();
 });
