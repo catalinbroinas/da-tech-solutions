@@ -1,11 +1,17 @@
-// Colors
-$background-page: #fbfbfb;
-$background-accent: #e3f2fd;
-$background-brand: #2962ff;
+// Brand color
+$brand: #2962ff;
 
-$text-primary: #332D2D;
-$text-white: white;
-$text-accent: #304FFE;
+// Background colors
+$background-page: #fbfbfb;
+$background-surface: #ffffff;
+$background-accent: #e3f2fd;
+$background-brand: $brand;
+
+// Text colors
+$text-primary: #332d2d;
+$text-secondary: #9fa6b2;
+$text-white: #ffffff;
+$text-accent: #304ffe;
 
 // Fonts
 $font-title: "Roboto", Arial, Verdana, sans-serif;
