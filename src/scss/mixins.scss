@@ -1,104 +1,122 @@
-// TYpography
+// =================================
+//   TYPOGRAPHY
+// =================================
+
 @mixin title($font-size: 2rem) {
-    font-family: $font-title;
-    font-weight: 700;
-    color: $text-primary;
-    font-size: $font-size;
-}
-@mixin sub-title($font-size: 1.5rem) {
-    font-family: $font-text;
-    font-weight: 600;
-    color: $text-primary;
-    font-size: $font-size;
-}
-@mixin text($font-size: 1rem) {
-    font-family: $font-text;
-    font-weight: 400;
-    color: $text-primary;
-    font-size: $font-size;
-}
-@mixin custom-text($font-family, $font-weight, $font-size, $color) {
-    font-family: $font-family;
-    font-weight: $font-weight;
-    font-size: $font-size;
-    color: $color;
+  font-family: $font-title;
+  font-weight: 700;
+  color: $text-primary;
+  font-size: $font-size;
 }
 
-// Components
-@mixin hr-heading($color: black) {
-    border: 0.35rem $color solid;
-    width: 8vw;
-    opacity: 0.8;
+@mixin sub-title($font-size: 1.5rem) {
+  font-family: $font-text;
+  font-weight: 600;
+  color: $text-primary;
+  font-size: $font-size;
 }
+
+@mixin text($font-size: 1rem) {
+  font-family: $font-text;
+  font-weight: 400;
+  color: $text-primary;
+  font-size: $font-size;
+}
+
+@mixin custom-text($font-family, $font-weight, $font-size, $color) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+// =================================
+//   COMPONENTS
+// =================================
 
 @mixin card-ice($alpha: 0.55, $blur: 30px) {
-    background: hsla(0, 0%, 100%, $alpha); 
-    backdrop-filter: blur($blur);
+  background: hsla(0, 0%, 100%, $alpha); 
+  backdrop-filter: blur($blur);
 }
 
+// Buttons
 @mixin btn-social-media($bg-color) {
+  background-color: $bg-color;
+  color: white;
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
     background-color: $bg-color;
     color: white;
-
-    &:visited,
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: $bg-color;
-        color: white;
-    }
+  }
 }
 
 @mixin btn-facebook {
-    @include btn-social-media(#3b5998);
+  @include btn-social-media(#3b5998);
 }
 
 @mixin btn-instagram {
-    @include btn-social-media(#ac2bac);
+  @include btn-social-media(#ac2bac);
 }
 
 @mixin btn-github {
-    @include btn-social-media(#333333);
+  @include btn-social-media(#333333);
 }
 
 @mixin btn-linkedin {
-    @include btn-social-media(#0082ca);
+  @include btn-social-media(#0082ca);
 }
 
-@mixin icon-social-media($color) {
-    color: $color;
+// =================================
+//   STYLES
+// =================================
 
-    &:hover,
-    &:active {
-        color: $background-brand;
-    }
+@mixin hr-heading($color: black) {
+  border: 0.35rem $color solid;
+  width: 8vw;
+  opacity: 0.8;
+}
+
+// Icons
+@mixin icon-social-media($color) {
+  color: $color;
+
+  &:hover,
+  &:active {
+    color: $background-brand;
+  }
 }
 
 @mixin icon-github {
-    @include icon-social-media(#333333);
+  @include icon-social-media(#333333);
 }
 @mixin icon-linkedin {
-    @include icon-social-media(#0082ca);
+  @include icon-social-media(#0082ca);
 }
 
-// Style
+// Masks
 @mixin mask-dark($opacity: 0.15) {
-    background-color: rgba($color: #000000, $alpha: $opacity);
+  background-color: rgba($color: #000000, $alpha: $opacity);
 }
 
 @mixin mask-light($opacity: 0.15) {
-    background-color: rgba($color: #ffffff, $alpha: $opacity);
+  background-color: rgba($color: #ffffff, $alpha: $opacity);
 }
 
-// Animation
+// =================================
+//   ANIMATION
+// =================================
+
 @mixin nav-item-border($bg-color: $text-accent, $width: 0px, $left: 0%) {
-    position: absolute;
-    width: $width;
-    height: 6px;
-    left: $left;
-    bottom: 0;
-    background-color: $bg-color;
-    transition-property: width, left;
-    transition-timing-function: ease-in-out;
-    transition-duration: .2s;
+  position: absolute;
+  width: $width;
+  height: 6px;
+  left: $left;
+  bottom: 0;
+  background-color: $bg-color;
+  transition-property: width, left;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s;
 }
