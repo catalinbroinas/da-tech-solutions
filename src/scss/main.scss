@@ -9,7 +9,7 @@
 // =================================
 
 body {
-  background-color: $primary-main;
+  background-color: $background-page;
 }
 
 // Typography
@@ -35,7 +35,7 @@ body {
   padding: 0.5rem 0 0;
 
   .navbar-toggler {
-    color: $secondary-dark;
+    color: $text-accent;
     padding: 1rem;
   }
 
@@ -46,7 +46,7 @@ body {
 
   .navbar-title {
     @include title(1.5rem);
-    color: $secondary-light;
+    color: $text-white;
   }
 
   .navbar-nav {
@@ -63,13 +63,13 @@ body {
     @include sub-title(1.25rem);
     padding: 1rem;
     position: relative;
-    color: $secondary-light;
+    color: $text-white;
   }
 
   .navbar-brand::after,
   .nav-link::after {
     content: '';
-    @include nav-item-border($secondary-light, 0px, 50%);
+    @include nav-item-border($text-white, 0px, 50%);
   }
 
   .navbar-brand:hover::after,
@@ -80,7 +80,7 @@ body {
 
   // Mobile devices
   @include media-breakpoint-down(lg) {
-    background-color: $primary-main;
+    background-color: $background-page;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
       rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
 
@@ -91,11 +91,11 @@ body {
     }
 
     .navbar-title {
-      color: $secondary-dark;
+      color: $text-accent;
     }
 
     .nav-link {
-      color: $secondary-main;
+      color: $text-primary;
     }
 
     .nav-item {
@@ -105,7 +105,7 @@ body {
     .navbar-brand::after,
     .nav-link::after {
       content: '';
-      @include nav-item-border($secondary-dark, 0px, 50%);
+      @include nav-item-border($text-accent, 0px, 50%);
     }
   }
 
@@ -126,11 +126,11 @@ body {
   background-position: center center;
 
   .title-intro {
-    @include custom-text($font-title, 700, 4rem, $secondary-light);
+    @include custom-text($font-title, 700, 4rem, $text-white);
   }
 
   .text-intro {
-    @include custom-text($font-text, 500, 2rem, $secondary-light);
+    @include custom-text($font-text, 500, 2rem, $text-white);
   }
 }
 
@@ -140,15 +140,15 @@ body {
 
 .card-custom {
   .card-title {
-    @include custom-text($font-title, 700, 1.25rem, $secondary-main);
+    @include custom-text($font-title, 700, 1.25rem, $text-primary);
   }
 
   .card-text {
-    @include custom-text($font-text, 500, 1rem, $secondary-main);
+    @include custom-text($font-text, 500, 1rem, $text-primary);
   }
 
   .card-icon {
-    color: $primary-dark;
+    color: $background-brand;
   }
 }
 
@@ -157,32 +157,32 @@ body {
   transform: translateX(10%);
 
   .card-title {
-    @include custom-text($font-title, 700, 1.75rem, $secondary-dark);
+    @include custom-text($font-title, 700, 1.75rem, $text-accent);
   }
 
   .card-sub-title {
-    @include custom-text($font-text, 600, 1.25rem, $secondary-main);
+    @include custom-text($font-text, 600, 1.25rem, $text-primary);
   }
 
   .card-text {
-    @include custom-text($font-text, 400, 1rem, $secondary-main);
+    @include custom-text($font-text, 400, 1rem, $text-primary);
   }
   .card-icon {
-    color: $primary-dark;
+    color: $background-brand;
   }
 }
 
 .card-product {
   .card-title {
-    @include custom-text($font-title, 700, 1.1rem, $secondary-dark);
+    @include custom-text($font-title, 700, 1.1rem, $text-accent);
   }
 
   .card-sub-title {
-    @include custom-text($font-text, 400, 1rem, $secondary-main);
+    @include custom-text($font-text, 400, 1rem, $text-primary);
   }
 
   .price {
-    @include custom-text($font-title, 600, 1.2rem, $secondary-main);
+    @include custom-text($font-title, 600, 1.2rem, $text-primary);
   }
 }
 
@@ -192,23 +192,23 @@ body {
 
 .btn.btn-dark.btn-custom {
   background-color: rgba($color: #ffffff, $alpha: 0.2);
-  color: $secondary-light;
+  color: $text-white;
 
   &:hover,
   &:active {
     background-color: rgba($color: #ffffff, $alpha: 0.05);
-    border: 1px solid $secondary-light;
+    border: 1px solid $text-white;
   }
 }
 
 .btn.btn-primary.btn-custom {
-  background-color: $primary-dark;
-  color: $secondary-light;
+  background-color: $background-brand;
+  color: $text-white;
 
   &:hover,
   &:active {
-    background-color: $primary-dark;
-    color: $secondary-light;
+    background-color: $background-brand;
+    color: $text-white;
   }
 }
 
@@ -240,7 +240,7 @@ body {
 }
 
 .icon-primary {
-  color: $secondary-dark;
+  color: $text-accent;
 }
 
 .font-title {
@@ -255,22 +255,22 @@ body {
 @include media-breakpoint-up(lg) {
   // Navbar
   .navbar.navbar-scroll {
-    background-color: $primary-main;
+    background-color: $background-page;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
       rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
 
     .navbar-title {
-      color: $secondary-dark;
+      color: $text-accent;
     }
     
     .nav-link {
-      color: $secondary-main;
+      color: $text-primary;
     }
 
     .navbar-brand::after,
     .nav-link::after {
       content: '';
-      @include nav-item-border($secondary-dark, 0px, 50%);
+      @include nav-item-border($text-accent, 0px, 50%);
     }
 
     .navbar-brand:hover::after,

@@ -2,19 +2,19 @@
 @mixin title($font-size: 2rem) {
     font-family: $font-title;
     font-weight: 700;
-    color: $secondary-main;
+    color: $text-primary;
     font-size: $font-size;
 }
 @mixin sub-title($font-size: 1.5rem) {
     font-family: $font-text;
     font-weight: 600;
-    color: $secondary-main;
+    color: $text-primary;
     font-size: $font-size;
 }
 @mixin text($font-size: 1rem) {
     font-family: $font-text;
     font-weight: 400;
-    color: $secondary-main;
+    color: $text-primary;
     font-size: $font-size;
 }
 @mixin custom-text($font-family, $font-weight, $font-size, $color) {
@@ -70,7 +70,7 @@
 
     &:hover,
     &:active {
-        color: $primary-dark;
+        color: $background-brand;
     }
 }
 
@@ -91,7 +91,7 @@
 }
 
 // Animation
-@mixin nav-item-border($bg-color: $secondary-dark, $width: 0px, $left: 0%) {
+@mixin nav-item-border($bg-color: $text-accent, $width: 0px, $left: 0%) {
     position: absolute;
     width: $width;
     height: 6px;
