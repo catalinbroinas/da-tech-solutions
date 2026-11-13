@@ -146,34 +146,70 @@ body {
 // =================================
 
 .intro {
-  height: 100vh;
+  height: 100svh;
+
   background-image: url('../assets/img/intro.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
 
   &__mask {
-    @include mask-dark(0.6);
+    @include mask-dark(0.5);
   }
 
   &__title {
-    @include custom-text($font-title, 700, 4rem, $text-white);
+    @include custom-text(
+      $font-title,
+      700,
+      clamp(2.25rem, 5vw, 4rem),
+      $text-white
+    );
+
     margin-bottom: 1.5rem;
   }
 
   &__text {
-    @include custom-text($font-text, 500, 2rem, $text-white);
+    max-width: 800px;
+    margin-inline: auto;
+
+    @include custom-text(
+      $font-text,
+      500,
+      clamp(1.125rem, 2.5vw, 2rem),
+      $text-white
+    );
+
     margin-bottom: 1.5rem;
   }
 
-  &__btn.btn.btn-dark {
-    background-color: rgba($color: #ffffff, $alpha: 0.2);
+  &__btn.btn.btn-primary {
+    background-color: rgba($background-surface, 0.2);
     color: $text-white;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 
-    &:hover,
-    &:active {
-      background-color: rgba($color: #ffffff, $alpha: 0.05);
-      border: 1px solid $text-white;
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($background-surface, 0.05);
+        color: $text-white;
+        border-color: $background-surface;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $background-brand;
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
     }
   }
 }
