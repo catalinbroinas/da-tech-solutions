@@ -267,16 +267,39 @@ body {
 }
 
 .card-product {
-  .card-title {
-    @include custom-text($font-title, 700, 1.1rem, $text-accent);
+  height: 100%;
+  
+  &__title {
+    @include custom-text(
+      $font-title,
+      700,
+      1.1rem,
+      $text-accent
+    );
+
+    margin-bottom: 0.5rem;
   }
 
-  .card-sub-title {
-    @include custom-text($font-text, 400, 1rem, $text-primary);
+  &__subtitle {
+    @include custom-text(
+      $font-text,
+      400,
+      1rem,
+      $text-primary
+    );
+
+    margin-bottom: 0.5rem;
   }
 
-  .price {
-    @include custom-text($font-title, 600, 1.2rem, $text-primary);
+  &__price {
+    @include custom-text(
+      $font-title,
+      600,
+      1.2rem,
+      $text-primary
+    );
+
+    margin-bottom: 0.5rem;
   }
 }
 
