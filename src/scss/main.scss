@@ -21,6 +21,27 @@ body {
   @include text;
 }
 
+// Spacing
+.section-margin {
+  margin-bottom: $section-spacing-xl;
+
+  @include media-breakpoint-down(xxl) {
+    margin-bottom: $section-spacing-lg;
+  }
+
+  @include media-breakpoint-down(xl) {
+    margin-bottom: $section-spacing-md;
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: $section-spacing-sm;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: $section-spacing-xs;
+  }
+}
+
 // =================================
 //   NAVBAR
 // =================================
