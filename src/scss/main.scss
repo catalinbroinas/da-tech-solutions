@@ -218,17 +218,27 @@ body {
 //   CARDS
 // =================================
 
-.card-custom {
-  .card-title {
-    @include custom-text($font-title, 700, 1.25rem, $text-primary);
-  }
-
-  .card-text {
-    @include custom-text($font-text, 500, 1rem, $text-primary);
-  }
-
-  .card-icon {
+.card-service {
+  &__icon {
     color: $background-brand;
+  }
+
+  &__title {
+    @include custom-text(
+      $font-title,
+      700,
+      1.25rem,
+      $text-primary
+    );
+  }
+
+  &__text {
+    @include custom-text(
+      $font-text,
+      500,
+      1rem,
+      $text-primary
+    );
   }
 }
 
