@@ -287,6 +287,10 @@ body {
 .card-product {
   height: 100%;
 
+  &__mask {
+    background-color: $mask-cold;
+  }
+
   &__title {
     @include custom-text(
       $font-title,
@@ -354,10 +358,6 @@ body {
 
 .mask-strong-dark {
   @include mask-dark(0.8);
-}
-
-.mask-special-cold {
-  background-color: rgba(79, 172, 254, 0.2);
 }
 
 .icon-primary {
