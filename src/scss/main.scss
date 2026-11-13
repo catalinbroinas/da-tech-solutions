@@ -246,19 +246,37 @@ body {
   @include card-ice;
   transform: translateX(10%);
 
-  .card-title {
-    @include custom-text($font-title, 700, 1.75rem, $text-accent);
+  &__title {
+    @include custom-text(
+      $font-title,
+      700,
+      1.75rem,
+      $text-accent
+    );
+
+    margin-bottom: 0.25rem;
   }
 
-  .card-sub-title {
-    @include custom-text($font-text, 600, 1.25rem, $text-primary);
+  &__subtitle {
+    @include custom-text(
+      $font-text,
+      600,
+      1.25rem,
+      $text-primary
+    );
+
+    margin-bottom: 1.5rem;
   }
 
-  .card-text {
-    @include custom-text($font-text, 400, 1rem, $text-primary);
-  }
-  .card-icon {
-    color: $background-brand;
+  &__text {
+    @include custom-text(
+      $font-text,
+      400,
+      1rem,
+      $text-primary
+    );
+
+    margin-bottom: 1.5rem;
   }
 
   @include media-breakpoint-down(lg) {
@@ -268,7 +286,7 @@ body {
 
 .card-product {
   height: 100%;
-  
+
   &__title {
     @include custom-text(
       $font-title,
