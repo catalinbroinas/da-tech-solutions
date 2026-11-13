@@ -356,10 +356,6 @@ body {
 //   UTILITIES
 // =================================
 
-.mask-strong-dark {
-  @include mask-dark(0.8);
-}
-
 .icon-primary {
   color: $text-accent;
 }
