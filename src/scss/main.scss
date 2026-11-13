@@ -14,9 +14,11 @@ body {
 .title {
   @include title;
 }
-.sub-title {
-  @include sub-title;
+
+.subtitle {
+  @include subtitle;
 }
+
 .text {
   @include text;
 }
@@ -87,7 +89,7 @@ body {
   }
 
   .nav-link {
-    @include sub-title(1.25rem);
+    @include subtitle(1.25rem);
     padding: 1rem;
     position: relative;
     color: $text-white;
