@@ -152,12 +152,29 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 
-  .title-intro {
-    @include custom-text($font-title, 700, 4rem, $text-white);
+  &__mask {
+    @include mask-dark(0.6);
   }
 
-  .text-intro {
+  &__title {
+    @include custom-text($font-title, 700, 4rem, $text-white);
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
     @include custom-text($font-text, 500, 2rem, $text-white);
+    margin-bottom: 1.5rem;
+  }
+
+  &__btn.btn.btn-dark {
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    color: $text-white;
+
+    &:hover,
+    &:active {
+      background-color: rgba($color: #ffffff, $alpha: 0.05);
+      border: 1px solid $text-white;
+    }
   }
 }
 
@@ -221,17 +238,6 @@ body {
 //   BUTTONS
 // =================================
 
-.btn.btn-dark.btn-custom {
-  background-color: rgba($color: #ffffff, $alpha: 0.2);
-  color: $text-white;
-
-  &:hover,
-  &:active {
-    background-color: rgba($color: #ffffff, $alpha: 0.05);
-    border: 1px solid $text-white;
-  }
-}
-
 .btn.btn-primary.btn-custom {
   background-color: $background-brand;
   color: $text-white;
@@ -259,9 +265,6 @@ body {
 //   UTILITIES
 // =================================
 
-.mask-dark {
-  @include mask-dark(0.6)
-}
 .mask-strong-dark {
   @include mask-dark(0.8);
 }
