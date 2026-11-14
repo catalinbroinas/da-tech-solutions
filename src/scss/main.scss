@@ -221,26 +221,34 @@ body {
 // =================================
 
 .card-service {
+  height: 100%;
+  border-radius: 0.75rem;
+
   &__icon {
     color: $background-brand;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   &__title {
     @include custom-text(
       $font-title,
-      700,
+      600,
       1.25rem,
       $text-primary
     );
+    margin-bottom: 0.5rem;
   }
 
   &__text {
     @include custom-text(
       $font-text,
-      500,
+      400,
       1rem,
-      $text-primary
+      $text-secondary
     );
+    line-height: 1.6;
+    margin: 0;
   }
 }
 
