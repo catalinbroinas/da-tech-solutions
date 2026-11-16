@@ -350,14 +350,24 @@ body {
   }
 
   &__price {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price-value {
     @include custom-text(
       $font-title,
       600,
-      1.2rem,
+      1.125rem,
       $text-primary
     );
+  }
 
-    margin-bottom: 0.5rem;
+  &__price-icon {
+    font-size: 0.875rem;
+    color: $text-muted;
   }
 }
 
