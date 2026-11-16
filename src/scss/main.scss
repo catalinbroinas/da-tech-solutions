@@ -369,10 +369,16 @@ body {
   background-color: $background-brand;
   color: $text-white;
 
-  &:hover,
-  &:active {
-    background-color: $background-brand;
-    color: $text-white;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $background-brand;
+      color: $text-white;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $text-secondary;
+    outline-offset: 4px;
   }
 }
 
