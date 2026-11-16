@@ -313,6 +313,16 @@ body {
     object-fit: cover;
   }
 
+  &__image-link {
+    position: absolute;
+    inset: 0;
+
+    &:focus-visible {
+      outline: 2px solid $background-brand;
+      outline-offset: -4px;
+    }
+  }
+
   &__mask {
     background-color: $mask-cold;
   }
