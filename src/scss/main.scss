@@ -253,8 +253,20 @@ body {
 }
 
 .card-about {
-  @include card-ice;
+  @include card-ice();
+
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+
   transform: translateX(10%);
+
+  &__image {
+    border-radius: 0.75rem;
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
 
   &__title {
     @include custom-text(
