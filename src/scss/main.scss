@@ -166,15 +166,15 @@ body {
   &__details-item {
     display: flex;
     align-items: center;
+    gap: 3rem;
+
+    @include media-breakpoint-down(md) {
+      gap: 1rem;
+    }
   }
 
   &__details-icon {
     color: $text-accent;
-    margin-right: 3rem;
-
-    @include media-breakpoint-down(md) {
-      margin-right: 1rem;
-    }
   }
 
   &__details-text,
@@ -188,6 +188,13 @@ body {
   }
 
   &__details-link {
+    display: flex;
+    gap: 3rem;
+
+    @include media-breakpoint-down(md) {
+      gap: 1rem;
+    }
+    
     @media (hover: hover) {
       &:hover {
         color: $text-accent;
