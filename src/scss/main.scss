@@ -144,6 +144,37 @@ body {
 }
 
 // =================================
+//   CONTACT
+// =================================
+
+.contact {
+  &__details {
+    background-color: $background-surface;
+    padding: 3rem;
+    border-radius: 0.75rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 1.5rem 1rem 1.5rem 1.5rem;
+      gap: 1.5rem;
+    }
+  }
+
+  &__details-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__details-links {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// =================================
 //   INTRO
 // =================================
 
