@@ -509,6 +509,10 @@ body {
   @include btn-linkedin;
 }
 
+.btn.btn-github {
+  @include btn-github;
+}
+
 // =================================
 //   FOOTER
 // =================================
