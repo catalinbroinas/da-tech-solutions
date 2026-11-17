@@ -171,6 +171,39 @@ body {
   &__details-links {
     display: flex;
     align-items: center;
+    gap: 3rem;
+
+    @include media-breakpoint-down(sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__details-icon {
+    color: $text-accent;
+    margin-right: 3rem;
+
+    @include media-breakpoint-down(md) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__details-text {
+    @include custom-text(
+      $font-title,
+      400,
+      1.25rem,
+      $text-primary
+    );
+
+    &--link {
+      color: $text-primary;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $text-accent;
+        }
+      }
+    }
   }
 }
 
@@ -451,18 +484,6 @@ body {
 
 .btn.btn-linkedin {
   @include btn-linkedin;
-}
-
-// =================================
-//   UTILITIES
-// =================================
-
-.icon-primary {
-  color: $text-accent;
-}
-
-.font-title {
-  font-family: $font-title;
 }
 
 // =================================
