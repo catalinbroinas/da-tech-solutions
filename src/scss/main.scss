@@ -168,16 +168,6 @@ body {
     align-items: center;
   }
 
-  &__details-links {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-
-    @include media-breakpoint-down(sm) {
-      gap: 1rem;
-    }
-  }
-
   &__details-icon {
     color: $text-accent;
     margin-right: 3rem;
@@ -187,22 +177,31 @@ body {
     }
   }
 
-  &__details-text {
+  &__details-text,
+  &__details-link {
     @include custom-text(
       $font-title,
       400,
       1.25rem,
       $text-primary
     );
+  }
 
-    &--link {
-      color: $text-primary;
-
-      @media (hover: hover) {
-        &:hover {
-          color: $text-accent;
-        }
+  &__details-link {
+    @media (hover: hover) {
+      &:hover {
+        color: $text-accent;
       }
+    }
+  }
+
+  &__details-social-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @include media-breakpoint-down(sm) {
+      gap: 1rem;
     }
   }
 }
