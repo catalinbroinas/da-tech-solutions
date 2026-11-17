@@ -222,7 +222,8 @@ body {
   &__details-social-links {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
 
     @include media-breakpoint-down(sm) {
       gap: 1rem;
