@@ -149,6 +149,8 @@ body {
 
 .contact {
   &__details {
+    font-style: normal;
+    
     background-color: $background-surface;
     padding: clamp(1.5rem, 4vw, 3rem);
     margin: 0;
@@ -189,12 +191,16 @@ body {
       inherit,
       $text-primary
     );
+
+    line-height: 1.5;
   }
 
   &__details-link {
     display: flex;
     align-items: center;
     gap: inherit;
+
+    overflow-wrap: anywhere;
 
     transition: color 0.25s ease;
 
