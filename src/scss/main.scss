@@ -196,10 +196,22 @@ body {
     align-items: center;
     gap: inherit;
 
+    transition: color 0.25s ease;
+
     @media (hover: hover) {
       &:hover {
         color: $text-accent;
       }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $background-brand;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
     }
   }
 
