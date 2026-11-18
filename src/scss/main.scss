@@ -348,6 +348,7 @@ body {
   z-index: 1;
 
   border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
 
   transform: translateX(10%);
 
@@ -363,7 +364,7 @@ body {
     @include custom-text(
       $font-title,
       600,
-      1.75rem,
+      clamp(1.5rem, 2.5vw, 1.75rem),
       $text-accent
     );
     letter-spacing: 0.5px;
@@ -376,7 +377,7 @@ body {
     @include custom-text(
       $font-text,
       600,
-      1.125rem,
+      clamp(1rem, 1.8vw, 1.125rem),
       $text-primary
     );
     line-height: 1.4;
@@ -398,6 +399,7 @@ body {
 
   @include media-breakpoint-down(lg) {
     transform: translate(0);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 }
 
