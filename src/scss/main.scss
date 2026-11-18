@@ -150,7 +150,7 @@ body {
 .contact {
   &__details {
     font-style: normal;
-    
+
     background-color: $background-surface;
     padding: clamp(1.5rem, 4vw, 3rem);
     margin: 0;
@@ -486,10 +486,16 @@ body {
   background-color: $background-brand;
   color: $text-white;
 
+  box-shadow: 0 4px 9px -4px rgba($background-brand, 0.35);
+
+  transition: box-shadow 0.25s ease;
+
   @media (hover: hover) {
     &:hover {
       background-color: $background-brand;
       color: $text-white;
+      box-shadow: 0 8px 9px -4px rgba($background-brand, 0.3),
+        0 4px 18px 0 rgba($background-brand, 0.2);
     }
   }
 
