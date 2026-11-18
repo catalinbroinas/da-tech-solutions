@@ -150,18 +150,13 @@ body {
 .contact {
   &__details {
     background-color: $background-surface;
-    padding: 3rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
     margin: 0;
     border-radius: 0.75rem;
 
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-
-    @include media-breakpoint-down(md) {
-      padding: 1.5rem 1rem 1.5rem 1.5rem;
-      gap: 1.5rem;
-    }
+    gap: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   &__details-list {
@@ -171,21 +166,13 @@ body {
 
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-
-    @include media-breakpoint-down(md) {
-      gap: 1.5rem;
-    }
+    gap: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   &__details-item {
     display: flex;
     align-items: center;
-    gap: 3rem;
-
-    @include media-breakpoint-down(md) {
-      gap: 1rem;
-    }
+    gap: clamp(1rem, 2.5vw, 2rem);
   }
 
   &__details-icon {
@@ -206,11 +193,7 @@ body {
   &__details-link {
     display: flex;
     align-items: center;
-    gap: 3rem;
-
-    @include media-breakpoint-down(md) {
-      gap: 1rem;
-    }
+    gap: inherit;
 
     @media (hover: hover) {
       &:hover {
@@ -223,11 +206,7 @@ body {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5rem 3rem;
-
-    @include media-breakpoint-down(sm) {
-      gap: 1rem;
-    }
+    gap: 1rem clamp(1.25rem, 2.5vw, 2rem);
   }
 }
 
