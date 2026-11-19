@@ -119,6 +119,11 @@ body {
     }
   }
 
+  .navbar-brand:focus-visible,
+  .nav-link:focus-visible {
+    outline: 2px solid $text-accent;
+  }
+
   // Mobile devices
   @include media-breakpoint-down(lg) {
     background-color: $background-page;
