@@ -14,6 +14,7 @@ function MainDomManager() {
   const initApp = () => {
     initMDB({ Ripple, Dropdown, Collapse });
     navbarManager.navbarScroll();
+    navbarManager.collapseNavbar();
   };
 
   return { initApp };
