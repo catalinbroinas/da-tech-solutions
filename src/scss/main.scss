@@ -101,10 +101,22 @@ body {
     @include nav-item-border($text-white, 0px, 50%);
   }
 
-  .navbar-brand:hover::after,
-  .nav-link:hover::after {
-    width: 100%;
-    left: 0;
+  // Touch devices
+  @media (hover: hover) {
+    .navbar-brand:hover::after,
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  // Non touch devices
+  @media (hover: none) {
+    .navbar-brand:active::after,
+    .nav-link:active::after {
+      width: 100%;
+      left: 0;
+    }
   }
 
   // Mobile devices
@@ -133,8 +145,7 @@ body {
 
     .navbar-brand::after,
     .nav-link::after {
-      content: '';
-      @include nav-item-border($text-accent, 0px, 50%);
+      background-color: $text-accent;
     }
   }
 
@@ -565,14 +576,7 @@ body {
 
     .navbar-brand::after,
     .nav-link::after {
-      content: '';
-      @include nav-item-border($text-accent, 0px, 50%);
-    }
-
-    .navbar-brand:hover::after,
-    .nav-link:hover::after {
-      width: 100%;
-      left: 0;
+      background-color: $text-accent;
     }
   }
 }
