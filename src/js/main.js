@@ -1,26 +1,29 @@
-// Style
+// MDBootstrap 5
+import { Ripple, Dropdown, Collapse, initMDB } from 'mdb-ui-kit';
+
+// Styles
 import '../scss/main.scss';
 
 // Modules
 import NavbarManager from './modules/navbarManager';
 
-// MDBootstrap 5
-import { Ripple, Dropdown, Collapse, initMDB } from 'mdb-ui-kit';
+function AppManager() {
+  const addEvents = () => {
+    const navbar = document.querySelector('#main-navigation');
+    const navbarManager = NavbarManager(navbar);
 
-function MainDomManager() {
-  const navbar = document.querySelector('#main-navigation');
-  const navbarManager = NavbarManager(navbar);
+    navbarManager.navbarScroll();
+    navbarManager.collapseNavbar();
+  };
 
   const initApp = () => {
     initMDB({ Ripple, Dropdown, Collapse });
-    navbarManager.navbarScroll();
-    navbarManager.collapseNavbar();
+    addEvents();
   };
 
   return { initApp };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const domManager = MainDomManager();
-  domManager.initApp();
+  AppManager().initApp();
 });
