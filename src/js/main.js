@@ -2,17 +2,18 @@
 import '../scss/main.scss';
 
 // Modules
-import { DomUtilityManager } from './modules/utility';
+import NavbarManager from './modules/navbarManager';
 
 // MDBootstrap 5
 import { Ripple, Dropdown, Collapse, initMDB } from 'mdb-ui-kit';
 
 function MainDomManager() {
-  const utilityDomManager = DomUtilityManager();
+  const navbar = document.querySelector('#main-navigation');
+  const navbarManager = NavbarManager(navbar);
 
   const initApp = () => {
     initMDB({ Ripple, Dropdown, Collapse });
-    utilityDomManager.navbarScroll();
+    navbarManager.navbarScroll();
   };
 
   return { initApp };
