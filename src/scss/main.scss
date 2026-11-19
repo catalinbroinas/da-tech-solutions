@@ -12,15 +12,15 @@ body {
 
 // Typography
 .title {
-  @include title;
+  @include title();
 }
 
 .subtitle {
-  @include subtitle;
+  @include subtitle();
 }
 
 .text {
-  @include text;
+  @include text();
 }
 
 // Spacing
@@ -154,6 +154,101 @@ body {
   transition-timing-function: ease-in-out;
 }
 
+.navbar.navbar-scroll {
+  @include media-breakpoint-up(lg) {
+    background-color: $background-page;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
+      rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+
+    .navbar-title {
+      color: $text-accent;
+    }
+    
+    .nav-link {
+      color: $text-primary;
+    }
+
+    .navbar-brand::after,
+    .nav-link::after {
+      background-color: $text-accent;
+    }
+  }
+}
+
+// =================================
+//   INTRO
+// =================================
+
+.intro {
+  height: 100vh;
+  height: 100svh;
+
+  background-image: url('../assets/img/intro.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__mask {
+    @include mask-dark(0.5);
+  }
+
+  &__title {
+    @include custom-text(
+      $font-title,
+      700,
+      clamp(2.25rem, 5vw, 4rem),
+      $text-white
+    );
+
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    max-width: 800px;
+    margin-inline: auto;
+
+    @include custom-text(
+      $font-text,
+      500,
+      clamp(1.125rem, 2.5vw, 2rem),
+      $text-white
+    );
+
+    margin-bottom: 1.5rem;
+  }
+
+  &__btn.btn.btn-primary {
+    background-color: rgba($background-surface, 0.2);
+    color: $text-white;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba($background-surface, 0.05);
+        color: $text-white;
+        border-color: $background-surface;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $background-brand;
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}
+
 // =================================
 //   CONTACT
 // =================================
@@ -241,76 +336,24 @@ body {
 }
 
 // =================================
-//   INTRO
+//   FOOTER
 // =================================
 
-.intro {
-  height: 100vh;
-  height: 100svh;
+.footer {
+  background-color: $background-footer;
 
-  background-image: url('../assets/img/intro.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &__mask {
-    @include mask-dark(0.5);
-  }
-
-  &__title {
-    @include custom-text(
-      $font-title,
-      700,
-      clamp(2.25rem, 5vw, 4rem),
-      $text-white
-    );
-
-    margin-bottom: 1.5rem;
-  }
-
-  &__text {
-    max-width: 800px;
-    margin-inline: auto;
+  &__copyright {
+    padding: 1rem;
+    text-align: center;
 
     @include custom-text(
       $font-text,
-      500,
-      clamp(1.125rem, 2.5vw, 2rem),
-      $text-white
+      400,
+      1rem,
+      $text-primary
     );
 
-    margin-bottom: 1.5rem;
-  }
-
-  &__btn.btn.btn-primary {
-    background-color: rgba($background-surface, 0.2);
-    color: $text-white;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-
-    transition:
-      background-color 0.25s ease,
-      border-color 0.25s ease,
-      box-shadow 0.25s ease;
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: rgba($background-surface, 0.05);
-        color: $text-white;
-        border-color: $background-surface;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-      }
-    }
-
-    &:focus-visible {
-      outline: 2px solid $background-brand;
-      outline-offset: 4px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
+    margin: 0;
   }
 }
 
@@ -530,53 +573,4 @@ body {
 
 .btn.btn-github {
   @include btn-github;
-}
-
-// =================================
-//   FOOTER
-// =================================
-
-.footer {
-  background-color: $background-footer;
-
-  &__copyright {
-    padding: 1rem;
-    text-align: center;
-
-    @include custom-text(
-      $font-text,
-      400,
-      1rem,
-      $text-primary
-    );
-
-    margin: 0;
-  }
-}
-
-// =================================
-//   BREAKPOINTS
-// =================================
-
-// Large devices
-@include media-breakpoint-up(lg) {
-  // Navbar
-  .navbar.navbar-scroll {
-    background-color: $background-page;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
-      rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
-
-    .navbar-title {
-      color: $text-accent;
-    }
-    
-    .nav-link {
-      color: $text-primary;
-    }
-
-    .navbar-brand::after,
-    .nav-link::after {
-      background-color: $text-accent;
-    }
-  }
 }
