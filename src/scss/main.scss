@@ -59,8 +59,13 @@ body {
 .navbar {
   position: fixed;
   z-index: 2;
-  background-color: transparent;
-  box-shadow: none;
+
+  // Mobile defaults
+  background-color: $background-page;
+  box-shadow:
+    rgba(0, 0, 0, 0.07) 0px 4px 12px 0px,
+    rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+
   padding: 0.5rem 0 0;
 
   .navbar-toggler {
@@ -69,13 +74,16 @@ body {
   }
 
   .navbar-brand {
-    padding: 1rem;
+    display: flex;
+    justify-content: center;
     position: relative;
+    padding: 1rem;
+    margin: 0;
   }
 
   .navbar-title {
     @include title(1.5rem);
-    color: $text-white;
+    color: $text-accent;
   }
 
   .navbar-nav {
@@ -84,24 +92,25 @@ body {
 
   .nav-item {
     padding: 0;
-    margin: 0 3rem 0 0;
+    margin: 0;
     text-align: center;
   }
 
   .nav-link {
     @include subtitle(1.25rem);
-    padding: 1rem;
     position: relative;
-    color: $text-white;
+    padding: 1rem;
+    color: $text-primary;
   }
 
+  // Navigation underline
   .navbar-brand::after,
   .nav-link::after {
     content: '';
-    @include nav-item-border($text-white, 0px, 50%);
+    @include nav-item-border($text-accent, 0px, 50%);
   }
 
-  // Touch devices
+  // Hover devices
   @media (hover: hover) {
     .navbar-brand:hover::after,
     .nav-link:hover::after {
@@ -110,7 +119,7 @@ body {
     }
   }
 
-  // Non touch devices
+  // Non-hover devices
   @media (hover: none) {
     .navbar-brand:active::after,
     .nav-link:active::after {
@@ -119,38 +128,37 @@ body {
     }
   }
 
+  // Keyboard accessibility
   .navbar-brand:focus-visible,
   .nav-link:focus-visible {
     outline: 2px solid $text-accent;
   }
 
-  // Mobile devices
-  @media (max-width: 991.98px) {
-    background-color: $background-page;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
-      rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
+  // Desktop styles
+  @include media-breakpoint-up(lg) {
+    background-color: transparent;
+    box-shadow: none;
 
     .navbar-brand {
-      display: flex;
-      justify-content: center;
-      margin: 0;
+      display: block;
+      margin: initial;
     }
 
     .navbar-title {
-      color: $text-accent;
-    }
-
-    .nav-link {
-      color: $text-primary;
+      color: $text-white;
     }
 
     .nav-item {
-      margin: 0;
+      margin: 0 3rem 0 0;
+    }
+
+    .nav-link {
+      color: $text-white;
     }
 
     .navbar-brand::after,
     .nav-link::after {
-      background-color: $text-accent;
+      background-color: $text-white;
     }
   }
 
@@ -160,7 +168,7 @@ body {
 }
 
 .navbar.navbar-scroll {
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     background-color: $background-page;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px 0px, 
       rgba(0, 0, 0, 0.05) 0px 2px 4px 0px;
