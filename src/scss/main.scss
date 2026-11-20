@@ -25,30 +25,30 @@ body {
 
 // Spacing
 .section-margin {
-  margin-bottom: $section-spacing-xl;
+  margin-bottom: $section-spacing-xs;
 
-  @include media-breakpoint-down(xxl) {
-    margin-bottom: $section-spacing-lg;
-  }
-
-  @include media-breakpoint-down(xl) {
-    margin-bottom: $section-spacing-md;
-  }
-
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-up(sm) {
     margin-bottom: $section-spacing-sm;
   }
 
-  @include media-breakpoint-down(sm) {
-    margin-bottom: $section-spacing-xs;
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $section-spacing-md;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: $section-spacing-lg;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-bottom: $section-spacing-xl;
   }
 }
 
 .scroll-margin {
-  scroll-margin-top: $navbar-height + $scroll-offset;
-  
-  @include media-breakpoint-down(lg) {
-    scroll-margin-top: $navbar-mobile-height + $scroll-offset;
+  scroll-margin-top: $navbar-mobile-height + $scroll-offset;
+
+  @include media-breakpoint-up(lg) {
+    scroll-margin-top: $navbar-height + $scroll-offset;
   }
 }
 
