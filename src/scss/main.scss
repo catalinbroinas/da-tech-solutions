@@ -455,7 +455,7 @@ body {
   }
 
   @include media-breakpoint-down(lg) {
-    transform: translate(0);
+    transform: none;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 }
