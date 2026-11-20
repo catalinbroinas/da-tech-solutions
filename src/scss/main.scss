@@ -210,6 +210,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: scroll;
+
+  @include media-breakpoint-up(lg) {
+    background-attachment: fixed;
+  }
+
+  // iOS compatibility
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: scroll;
+  }
 
   &__mask {
     @include mask-dark(0.5);
