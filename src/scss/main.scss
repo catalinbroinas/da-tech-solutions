@@ -73,6 +73,12 @@ body {
     padding: 1rem;
   }
 
+  .navbar-collapse {
+    max-height: calc(100dvh - $navbar-mobile-height);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
   .navbar-brand {
     display: flex;
     justify-content: center;
