@@ -413,9 +413,12 @@ body {
   z-index: 1;
 
   border-radius: 0.75rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 
-  transform: translateX(10%);
+  @include media-breakpoint-up(lg) {
+    transform: translateX(10%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
 
   &__image {
     border-radius: 0.75rem;
@@ -460,11 +463,6 @@ body {
     line-height: 1.7;
 
     margin-bottom: 1.5rem;
-  }
-
-  @include media-breakpoint-down(lg) {
-    transform: none;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 }
 
